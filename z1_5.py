@@ -1,16 +1,18 @@
-## 5. Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 2D пространстве. https://ru.onlinemschool.com/math/library/analytic_geometry/point_point_length/
+## 5. Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 2D пространстве. 
+
+
 def inputNumbers(x):
     xy = ["X", "Y"]
     a = []
     for i in range(x):
-        is_OK = False
-        while not is_OK:
+        checker = False
+        while not checker:
             try:
                 number = int(input(f"Введите координату по {xy[i]}: "))
                 a.append(number)
-                is_OK = True
+                checker = True
             except ValueError:
-                print("Ты ошибся. Вводить надо целые числа!")
+                print("Введите целое число")
     return a
 
 
@@ -20,7 +22,8 @@ def calculateLengthSegment(a, b):
 
 
 print("Введите координаты точки А")
-pointA = inputNumbers()
+pointA = inputNumbers(2)
 print("Введите координаты точки В")
-pointB = inputNumbers()
-print(f"Длина отрезка: {format(calculateLengthSegment(pointA, pointB), '.2f')}
+pointB = inputNumbers(2)
+
+print(f"Длина отрезка: {format(calculateLengthSegment(pointA, pointB), '.2f')}")
